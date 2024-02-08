@@ -20,6 +20,8 @@ test_coverage:
 	go tool cover -html=${TEMP_DIR}cover.out -o ${TEMP_DIR}cover.html
 	firefox ${TEMP_DIR}cover.html
 
-build: test clean init
+build:
 	mkdir -p ${BINARY_DIR}
 	go build -o ${BINARY_DIR}${BINARY_NAME} ./cmd/cmus-status/main.go
+
+release: test clean init build
