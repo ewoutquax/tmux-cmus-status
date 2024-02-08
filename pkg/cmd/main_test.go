@@ -3,7 +3,7 @@ package cmd_test
 import (
 	"testing"
 
-	"github.com/ewoutquax/tmux-cmus-status/pkg/cmd"
+	. "github.com/ewoutquax/tmux-cmus-status/pkg/cmd"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -16,8 +16,8 @@ func TestCommandExec(t *testing.T) {
 		"playing: 'Carillion'|cmus",
 	}
 
-	executor := cmd.BuildExecutor(
-		cmd.WithCommandExecutor(CommandExecutorMock{assert.New(t)}),
+	executor := BuildExecutor(
+		WithCommandExecutor(CommandExecutorMock{assert.New(t)}),
 	)
 
 	executor.Exec(params)
