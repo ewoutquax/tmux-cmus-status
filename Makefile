@@ -2,6 +2,8 @@ TEMP_DIR=./tmp/
 BINARY_DIR=./bin/
 BINARY_NAME=cmus-status
 
+all: test clean init build
+
 clean:
 	go clean
 	rm -rf ${TEMP_DIR}
@@ -23,5 +25,3 @@ test_coverage:
 build:
 	mkdir -p ${BINARY_DIR}
 	go build -o ${BINARY_DIR}${BINARY_NAME} ./cmd/cmus-status/main.go
-
-release: test clean init build
