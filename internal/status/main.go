@@ -3,10 +3,10 @@ package status
 import (
 	"os"
 
-	"github.com/ewoutquax/tmux-cmus-status/internal/cmus"
+	"github.com/ewoutquax/tmux-cmus-status/internal/player"
 )
 
-func ForTmux(data cmus.ExtractedData) (params []string) {
+func ForTmux(data player.ExtractedData) (params []string) {
 	return []string{
 		"tmux",
 		"rename-window",

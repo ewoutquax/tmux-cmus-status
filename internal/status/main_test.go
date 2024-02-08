@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ewoutquax/tmux-cmus-status/internal/cmus"
+	"github.com/ewoutquax/tmux-cmus-status/internal/player"
 	. "github.com/ewoutquax/tmux-cmus-status/internal/status"
 	"github.com/ewoutquax/tmux-cmus-status/pkg/envvars"
 	"github.com/stretchr/testify/assert"
@@ -26,7 +26,7 @@ func TestForTmux(t *testing.T) {
 		"paused: 'Scooby Snacks'|cmus",
 	}
 
-	data := cmus.ExtractedData{
+	data := player.ExtractedData{
 		Status: "paused",
 		Title:  "Scooby Snacks",
 	}

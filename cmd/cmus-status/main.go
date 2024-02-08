@@ -4,7 +4,7 @@ import (
 	"os"
 	"sync"
 
-	"github.com/ewoutquax/tmux-cmus-status/internal/cmus"
+	"github.com/ewoutquax/tmux-cmus-status/internal/player"
 	"github.com/ewoutquax/tmux-cmus-status/internal/status"
 	"github.com/ewoutquax/tmux-cmus-status/pkg/cmd"
 	"github.com/ewoutquax/tmux-cmus-status/pkg/envvars"
@@ -17,7 +17,7 @@ func main() {
 		envvars.LoadEnvVars()
 	})
 
-	executor := cmd.Building()
-	params := cmus.ExtractData(os.Args)
+	executor := cmd.BuildExecutor()
+	params := player.ExtractCmusData(os.Args)
 	executor.Exec(status.ForTmux(params))
 }

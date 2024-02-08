@@ -1,9 +1,9 @@
-package cmus_test
+package player_test
 
 import (
 	"testing"
 
-	. "github.com/ewoutquax/tmux-cmus-status/internal/cmus"
+	. "github.com/ewoutquax/tmux-cmus-status/internal/player"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -13,7 +13,7 @@ func TestExtractData(t *testing.T) {
 		Title:  "Scooby Snacks",
 	}
 
-	assert.Equal(t, expectedResult, ExtractData(testInput()))
+	assert.Equal(t, expectedResult, ExtractCmusData(testInput()))
 }
 
 func testInput() []string {

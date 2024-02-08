@@ -16,7 +16,7 @@ func TestCommandExec(t *testing.T) {
 		"playing: 'Carillion'|cmus",
 	}
 
-	executor := cmd.Building(
+	executor := cmd.BuildExecutor(
 		cmd.WithCommandExecutor(CommandExecutorMock{assert.New(t)}),
 	)
 

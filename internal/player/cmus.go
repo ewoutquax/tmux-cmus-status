@@ -1,11 +1,6 @@
-package cmus
+package player
 
-type ExtractedData struct {
-	Status string
-	Title  string
-}
-
-func ExtractData(args []string) (data ExtractedData) {
+func ExtractCmusData(args []string) (data ExtractedData) {
 	for idx := 1; idx < len(args)-1; idx += 2 {
 		switch args[idx] {
 		case "status":
