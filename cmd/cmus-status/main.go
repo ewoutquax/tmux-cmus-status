@@ -16,8 +16,9 @@ func main() {
 	debugPrintArgs()
 
 	executor := cmd.BuildExecutor()
-	params := player.ExtractCmusData(os.Args)
-	executor.Exec(status.ForTmux(params))
+	data := player.ExtractCmusData(os.Args)
+	text := player.FormatText(data)
+	executor.Exec(status.ForTmux(text))
 }
 
 func debugPrintArgs() {

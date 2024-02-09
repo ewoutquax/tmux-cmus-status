@@ -26,10 +26,6 @@ func TestForTmux(t *testing.T) {
 		"paused: 'Scooby Snacks'|cmus",
 	}
 
-	data := player.ExtractedData{
-		Status: "paused",
-		Title:  "Scooby Snacks",
-	}
-
-	assert.Equal(t, expectedResult, ForTmux(data))
+	text := player.WindowText("paused: 'Scooby Snacks'|cmus")
+	assert.Equal(t, expectedResult, ForTmux(text))
 }
